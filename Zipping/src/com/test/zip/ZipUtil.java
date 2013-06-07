@@ -11,7 +11,7 @@ import java.util.zip.ZipOutputStream;
 /**
  * 
  * @author shabby
- *
+ * 
  */
 public class ZipUtil {
 
@@ -20,12 +20,10 @@ public class ZipUtil {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
 		/**
 		 * Parent Directory
 		 */
 		final String path = "/home/shabby/PARENT";
-
 		/**
 		 * Child Folders
 		 */
@@ -35,13 +33,10 @@ public class ZipUtil {
 		 */
 		File parentFolder = new File(path);
 		/**
-		 * List of files in parent folder.
-		 * Here we will use isDirectory() method 
-		 * to check if this is directory 
+		 * List of files in parent folder. Here we will use isDirectory() method
+		 * to check if this is directory
 		 */
 		final File[] listOfFiles = parentFolder.listFiles();
-
-		
 		/**
 		 * Loop to traverse through the parent folder
 		 */
@@ -51,7 +46,6 @@ public class ZipUtil {
 			 */
 			File output = new File("/home/shabby/PARENTOUTPUT/OUTPUT" + i
 					+ ".zip");
-
 			/**
 			 * checking if it is a directory or not
 			 */
@@ -61,7 +55,6 @@ public class ZipUtil {
 				 */
 				childfFolders = listOfFiles[i].getName();
 				System.out.println("----" + childfFolders);
-
 				/**
 				 * Files in the sub-directories
 				 */
@@ -97,7 +90,7 @@ public class ZipUtil {
 				if (!currentFile.isDirectory()) {
 
 					/**
-					 * We are on,y zipping the .txt files but can be removed 
+					 * We are on,y zipping the .txt files but can be removed
 					 * according to need.
 					 */
 					if (currentFile.getName().endsWith(".txt")
@@ -122,10 +115,10 @@ public class ZipUtil {
 
 					}
 					/**
-					 * If it is no .txt we will omit it. 
+					 * If it is no .txt we will omit it.
 					 */
 					else {
-						
+
 						System.out.println("something else found");
 					}
 				}
